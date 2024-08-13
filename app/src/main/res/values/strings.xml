@@ -2,4 +2,5 @@
     <string name="app_name">HermesNotifications</string>
     <string name="local_notifications">Local Notifications</string>
     <string name="basic_notification">Basic notification</string>
+    <string name="expandable_with_image_notification">Expandable with image notification</string>
 </resources>
