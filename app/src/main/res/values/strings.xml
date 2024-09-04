@@ -3,4 +3,5 @@
     <string name="local_notifications">Local Notifications</string>
     <string name="basic_notification">Basic notification</string>
     <string name="expandable_with_image_notification">Expandable with image notification</string>
+    <string name="expandable_with_big_text_notification">Expandable with big text</string>
 </resources>

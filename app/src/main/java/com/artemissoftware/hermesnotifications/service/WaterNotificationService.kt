@@ -40,6 +40,21 @@ class WaterNotificationService(
         )
     }
 
+    fun showExpandableLongText() {
+        val notification = getNotification()
+            .setStyle(
+                NotificationCompat
+                    .BigTextStyle()
+                    .bigText("Very big text")
+            )
+            .build()
+
+        notificationManager.notify(
+           3,
+            notification
+        )
+    }
+
     private fun getNotification() = NotificationCompat.Builder(context, CHANNEL_ID)
         .setContentTitle("Water Reminder")
         .setContentText("Time to drink some water!")
