@@ -55,6 +55,28 @@ class WaterNotificationService(
         )
     }
 
+    fun showInboxStyle() {
+        val notification = getNotification()
+            .setStyle(
+                NotificationCompat
+                    .InboxStyle()
+                    .addLine("Drink water in the morning")
+                    .addLine("Drink water before lunch")
+                    .addLine("Drink water after lunch")
+                    .addLine("Dont forget to pee")
+                    .addLine("Line 5")
+                    .addLine("Line 6")
+                    .addLine("Line 7")
+            )
+            .setAutoCancel(true)
+            .build()
+
+        notificationManager.notify(
+            4,
+            notification
+        )
+    }
+
     private fun getNotification() = NotificationCompat.Builder(context, CHANNEL_ID)
         .setContentTitle("Water Reminder")
         .setContentText("Time to drink some water!")
