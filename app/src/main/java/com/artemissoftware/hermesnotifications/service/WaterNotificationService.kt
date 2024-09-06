@@ -77,6 +77,56 @@ class WaterNotificationService(
         )
     }
 
+    fun showNotificationGroup() {
+        val groupId = "water_group"
+        val summaryId = 0
+
+        val notification1 = getNotification()
+            .setStyle(
+                NotificationCompat
+                    .InboxStyle()
+                    .addLine("Line 1")
+            )
+            .setGroup(groupId)
+            .build()
+
+        val notification2 = getNotification()
+            .setStyle(
+                NotificationCompat
+                    .InboxStyle()
+                    .addLine("Line 1")
+                    .addLine("Line 2")
+            )
+            .setGroup(groupId)
+            .build()
+
+        val summaryNotification = getNotification()
+            .setStyle(
+                NotificationCompat
+                    .InboxStyle()
+                    .setSummaryText("Water reminders missed")
+                    .setBigContentTitle("Water Reminders")
+            )
+            .setGroup(groupId)
+            .setGroupSummary(true)
+            .build()
+
+        notificationManager.notify(
+            5,
+            notification1
+        )
+        notificationManager.notify(
+            6,
+            notification2
+        )
+
+        notificationManager.notify(
+            7,
+            summaryNotification
+        )
+
+    }
+
     private fun getNotification() = NotificationCompat.Builder(context, CHANNEL_ID)
         .setContentTitle("Water Reminder")
         .setContentText("Time to drink some water!")
